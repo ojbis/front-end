@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.js"></script>
+<body>
+
+<div data-ng-app="myApp" data-ng-controller="myCtrl" data-ng-init="firstName='Olivier'">
+  <div>
+  <p> Quelques tests sur le lien direct html <-> js </p>
+
+  <p>The name is: <span data-ng-bind="firstName"></span></p>
+
+  <p>Premier nombre = <input type="number" data-ng-model="x1"></p>
+  <p>Deuxieme nombre = <input type="number" data-ng-model="x2"></p>
+  <p>La somme : {{x1}} + {{x2}} = {{ x1 + x2 }}</p>
+  <p>Le produit : {{x1}} * {{x2}} = {{ x1 * x2 }}</p>
+  </div>
+  <div>
+	<p>-----------------------------------</p>
+	<p>Quelques tests API</p>
+	
+  </div>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.firstName= "John";
+	$scope.x1 = 5;
+});
+
+</script>
+
+</body>
+</html>
